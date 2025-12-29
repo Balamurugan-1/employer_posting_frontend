@@ -1,13 +1,19 @@
 'use client';
-import Link from 'next/link'
 
 import { useState } from 'react';
 import api from '@/utils/api';
 import { useRouter } from 'next/navigation'; 
+import { useEffect } from 'react';
 
 export default function PostJob() {
   const router = useRouter();
-  
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert("You must be logged in to post a job!");
+        router.push('/login');
+    }
+    }, []);
 
   const [formData, setFormData] = useState({
     title: '',
