@@ -131,7 +131,7 @@ export default function EmployerDashboard() {
                         {new Date(job.created_at).toLocaleDateString()}
                       </td>
                       <td className="px-6 py-4 text-right space-x-3">
-                         <button className="text-blue-600 hover:text-blue-900 font-medium">Edit</button>
+                         <button onClick={() => router.push(`/edit-job/${job._id}`)} className="text-blue-600 hover:text-blue-900 font-medium">Edit</button>
                          <button onClick={() => handleDelete(job._id)} className="text-red-600 hover:text-red-900 font-medium">Delete</button>
                       </td>
                     </tr>
