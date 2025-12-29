@@ -133,6 +133,12 @@ export default function EmployerDashboard() {
                       <td className="px-6 py-4 text-right space-x-3">
                          <button onClick={() => router.push(`/edit-job/${job._id}`)} className="text-blue-600 hover:text-blue-900 font-medium">Edit</button>
                          <button onClick={() => handleDelete(job._id)} className="text-red-600 hover:text-red-900 font-medium">Delete</button>
+                        <button
+                          onClick={() => router.push(`/my-jobs/${job._id}/applications`)}
+                          className="text-purple-600 hover:text-purple-800 font-medium px-3"
+                        >
+                          View Applicants
+                        </button>
                       </td>
                     </tr>
                   ))}
